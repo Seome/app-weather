@@ -1,23 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import FavoritesView from '../views/FavoritesView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: { name: 'home' }
-  },
-  {
-    path: '/app-weather/',
     name: 'home',
     component: HomeView
   },
   {
-    path: '/app-weather/favorites',
+    path: '/favorites',
     name: 'favorites',
-    component: () => import(/* webpackChunkName: "about" */ '../views/FavoritesView.vue')
+    component: FavoritesView
   }
 ]
 
